@@ -83,6 +83,17 @@ class SinglyLinkedList {
         }
         return false;
     }
+    insert(index, value) {
+        if (index < 0 || index > this.length) return false;
+        if (index === this.length) return this.push(value);
+        if (index === 0) return this.unshift(value)
+        let newNode = new Node(value);
+        newNode.next = this.get(index);
+        let nodeBefore = this.get(index - 1);
+        nodeBefore.next = newNode;
+        this.length++
+            return true;
+    }
 }
 
 const list = new SinglyLinkedList()
