@@ -104,9 +104,26 @@ class SinglyLinkedList {
         this.length--;
         return outgoingNode;
     }
+    reverse() {
+        let node = this.head;
+        this.head = this.tail
+        this.tail = node;
+        let prev = null;
+        var next;
+        for (let i = 0; i < this.length; i++) {
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        return this;
+    }
 }
 
 const list = new SinglyLinkedList()
 list.push(23);
 list.push(44);
 list.push(38);
+list.push('fucoff');
+list.push('manthiscrazy');
+console.log(list)
