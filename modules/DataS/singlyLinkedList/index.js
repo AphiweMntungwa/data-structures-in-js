@@ -127,3 +127,5 @@ list.push(38);
 list.push('fucoff');
 list.push('manthiscrazy');
 console.log(list)
+
+export { SinglyLinkedList };
