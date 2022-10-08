@@ -120,12 +120,4 @@ class SinglyLinkedList {
     }
 }
 
-const list = new SinglyLinkedList()
-list.push(23);
-list.push(44);
-list.push(38);
-list.push('fucoff');
-list.push('manthiscrazy');
-console.log(list)
-
 export { SinglyLinkedList };
