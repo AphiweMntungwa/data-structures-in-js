@@ -6,7 +6,8 @@ import { binarySearchTree } from "./modules/datastructures/binarySearchTree/inde
 
 console.log(binarySearchTree);
 
-
+let bst = new binarySearchTree()
+window.bst = bst;
 let list = new Queue();
 list.enqueue(1) //7
 list.enqueue(2) //7
