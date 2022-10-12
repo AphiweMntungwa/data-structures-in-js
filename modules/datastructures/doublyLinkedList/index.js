@@ -121,6 +121,23 @@ class DoublyLinkedList {
         this.length--;
         return removedNode;;;
     }
+    reverse() {
+        let node = this.head;
+        this.head = this.tail
+        this.tail = node;
+        let prev = null;
+        var next;
+        var previous;
+        for (let i = 0; i < this.length; i++) {
+            next = node.next;
+            previous = node.next
+            node.next = prev;
+            node.prev = previous;
+            prev = node;
+            node = next;
+        }
+        return this;
+    }
 }
 
 export { DoublyLinkedList };

@@ -1,19 +1,14 @@
-import { DoublyLinkedList } from "./modules/DataS/doublyLinkedList/index.js";
-import { SinglyLinkedList } from "./modules/DataS/singlyLinkedList/index.js";
+import { DoublyLinkedList } from "./modules/datastructures/doublyLinkedList/index.js";
+import { SinglyLinkedList } from "./modules/datastructures/singlyLinkedList/index.js";
+import { Stack } from "./modules/datastructures/stack/index.js";
+import { Queue } from "./modules/datastructures/queue/index.js"
+import { binarySearchTree } from "./modules/datastructures/binarySearchTree/index.js"
 
-console.log('doublyLinkedList');
+console.log(binarySearchTree);
 
 
-let list = new DoublyLinkedList();
-//list.push({ name: 'Aphiwe', lastName: 'Mntungwa' }) //0
-// list.push(1) //1
-// list.push(11) //2
-// list.push(110) //3
-// list.push('hello') //4
-// list.push('good') //5
-// list.push('sir') //6
-list.push(1) //7
-list.push(2) //7
-list.push(3) //7
-    //list.push('good') //8
+let list = new Queue();
+list.enqueue(1) //7
+list.enqueue(2) //7
+list.enqueue(3) //7
 window.list = list;
