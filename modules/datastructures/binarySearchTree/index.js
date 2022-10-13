@@ -1,3 +1,5 @@
+import Queue from "../queue/index.js";
+
 class Node {
     constructor(val) {
         this.value = val;
@@ -37,6 +39,42 @@ class binarySearchTree {
             this.root = newNode;
             return this;
         }
+    }
+    find(val) {
+        if (this.root && val != undefined) {
+            let nodeVal = this.root
+            while (true) {
+                if (val > nodeVal.value) {
+                    if (!nodeVal.right) {
+                        return false;
+                    }
+                    nodeVal = nodeVal.right;
+                } else if (val < nodeVal.value) {
+                    if (!nodeVal.left) {
+                        return false;
+                    }
+                    nodeVal = nodeVal.left;
+                } else {
+                    return nodeVal;
+                }
+            }
+        } else {
+            return false;
+        }
+    }
+    breadthFirstSearch() {
+        if (!this.root) return false;
+        var node = this.root,
+            data = [],
+            queue = new Queue();
+        queue.enqueue(node)
+        while (queue.length) {
+            node = queue.dequeue()
+            data.push(node.value);
+            if (node.left) queue.enqueue(node.left);
+            if (node.right) queue.enqueue(node.right)
+        }
+        return data;
     }
 }
 
