@@ -1,6 +1,5 @@
 import { DoublyLinkedList } from "./modules/datastructures/doublyLinkedList/index.js";
 import { SinglyLinkedList } from "./modules/datastructures/singlyLinkedList/index.js";
-import { Stack } from "./modules/datastructures/stack/index.js";
 import Queue from "./modules/datastructures/queue/index.js"
 import { binarySearchTree } from "./modules/datastructures/binarySearchTree/index.js"
 

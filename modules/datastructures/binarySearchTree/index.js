@@ -1,4 +1,5 @@
 import Queue from "../queue/index.js";
+import Stack from "../stack/index.js";
 
 class Node {
     constructor(val) {
@@ -73,6 +74,33 @@ class binarySearchTree {
             data.push(node.value);
             if (node.left) queue.enqueue(node.left);
             if (node.right) queue.enqueue(node.right)
+        }
+        return data;
+    }
+    depthFirstSearchPreOrder() {
+        if (!this.root) return false;
+        var node = this.root,
+            data = [],
+            stack = new Stack();
+        stack.push(node)
+        while (stack.length) {
+            node = stack.pop()
+            data.push(node.value);
+            if (node.right) stack.push(node.right)
+            if (node.left) stack.push(node.left);
+        }
+        return data;
+    }
+    depthFirstSearchPreOrderAlt() {
+        if (!this.root) return false;
+        var current = this.root,
+            data = [];
+        helperDFS(current)
+
+        function helperDFS(node) {
+            data.push(node.value);
+            if (node.left) helperDFS(node.left);
+            if (node.right) helperDFS(node.right)
         }
         return data;
     }
