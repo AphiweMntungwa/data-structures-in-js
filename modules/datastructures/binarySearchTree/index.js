@@ -79,6 +79,19 @@ class binarySearchTree {
     }
     depthFirstSearchPreOrder() {
         if (!this.root) return false;
+        var current = this.root,
+            data = [];
+        helperDFS(current)
+
+        function helperDFS(node) {
+            data.push(node.value);
+            if (node.left) helperDFS(node.left);
+            if (node.right) helperDFS(node.right)
+        }
+        return data;
+    }
+    depthFirstSearchPreOrderAlt() {
+        if (!this.root) return false;
         var node = this.root,
             data = [],
             stack = new Stack();
@@ -91,15 +104,28 @@ class binarySearchTree {
         }
         return data;
     }
-    depthFirstSearchPreOrderAlt() {
+    depthFirstSearchPostOrder() {
         if (!this.root) return false;
         var current = this.root,
             data = [];
         helperDFS(current)
 
         function helperDFS(node) {
-            data.push(node.value);
             if (node.left) helperDFS(node.left);
+            if (node.right) helperDFS(node.right)
+            data.push(node.value);
+        }
+        return data;
+    }
+    depthFirstSearchInOrder() {
+        if (!this.root) return false;
+        var current = this.root,
+            data = [];
+        helperDFS(current)
+
+        function helperDFS(node) {
+            if (node.left) helperDFS(node.left);
+            data.push(node.value);
             if (node.right) helperDFS(node.right)
         }
         return data;
