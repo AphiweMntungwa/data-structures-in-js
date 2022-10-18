@@ -14,15 +14,20 @@
         
         .block {
             word-wrap: break-word;
-            padding-inline: 5%;
+            margin-inline: 10%;
             line-height: 2;
             font-weight: 600;
             letter-spacing: 2;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            max-height: 80vh;
+            overflow-y: auto;
         }
         
-        .block+button {
-            margin-inline: 5%;
+        .configs {
+            min-height: 10vh;
+            padding-left: 5%;
+            font-size: 1.2em;
+            background-color: teal;
         }
     </style>
 </head>
@@ -31,9 +36,21 @@
     <h1>Data Structures & Algorithms</h1>
     <div class="block">
     </div>
-    <button>quick sort</button>
-    <input type="number" value="20" name="data">
-    <button>add data</button>
+    <div class="configs">
+        <select name="sorts" id="">
+        <option value="quicksort">Quick Sort</option>
+        <option value="mergesort">Merge Sort</option>
+        <option value="selectionsort">Selection Sort</option>
+        <option value="bubblesort">Bubble Sort</option>
+        <option value="insertionsort">Insertion Sort</option>
+    </select>
+        <button>
+        sort
+    </button>
+        <input type="number" value="20" name="data">
+        <button>add data</button>
+    </div>
+
     <script type="module" src="./main.js"></script>
 </body>
 
