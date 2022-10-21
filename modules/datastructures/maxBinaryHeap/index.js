@@ -21,22 +21,21 @@ export default class MaxBinaryHeap {
     }
     bubbleDown(parent, leftChild, rightChild, arr = this.values) {
         if (arr[parent] < arr[leftChild] || arr[parent] < arr[rightChild]) {
-            if (arr[leftChild] > arr[rightChild]) {
-                [this.values[parent], this.values[leftChild]] = [this.values[leftChild], this.values[parent]];
-                parent = leftChild;
-                leftChild = 2 * parent + 1;
-                rightChild = 2 * parent + 2;
-                this.bubbleDown(parent, leftChild, rightChild);
-            } else if (arr[leftChild] < arr[rightChild]) {
-                [this.values[parent], this.values[rightChild]] = [this.values[rightChild], this.values[parent]];
-                parent = rightChild;
-                leftChild = 2 * parent + 1;
-                rightChild = 2 * parent + 2;
-                this.bubbleDown(parent, leftChild, rightChild);
-            } else if (arr[rightChild] === undefined) {
+            if (arr[rightChild] === undefined) {
                 [this.values[parent], this.values[leftChild]] = [this.values[leftChild], this.values[parent]];
             } else if (arr[leftChild] === undefined) {
                 [this.values[parent], this.values[rightChild]] = [this.values[rightChild], this.values[parent]];
+            } else if (arr[leftChild] !== arr[rightChild]) {
+                if (arr[leftChild] > arr[rightChild]) {
+                    [this.values[parent], this.values[leftChild]] = [this.values[leftChild], this.values[parent]];
+                    parent = leftChild;
+                } else if (arr[leftChild] < arr[rightChild]) {
+                    [this.values[parent], this.values[rightChild]] = [this.values[rightChild], this.values[parent]];
+                    parent = rightChild;
+                }
+                leftChild = 2 * parent + 1;
+                rightChild = 2 * parent + 2;
+                this.bubbleDown(parent, leftChild, rightChild);
             }
         }
     }
