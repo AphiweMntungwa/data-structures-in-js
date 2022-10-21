@@ -2,6 +2,7 @@ import { DoublyLinkedList } from "./modules/datastructures/doublyLinkedList/inde
 import { SinglyLinkedList } from "./modules/datastructures/singlyLinkedList/index.js";
 import Queue from "./modules/datastructures/queue/index.js"
 import { binarySearchTree } from "./modules/datastructures/binarySearchTree/index.js"
+import MaxBinaryHeap from "./modules/datastructures/maxBinaryHeap/index.js";
 import quickSort from './modules/algorithms/sorting/quickSort.js'
 import mergeSort from './modules/algorithms/sorting/mergeSort.js'
 import selectionSort from './modules/algorithms/sorting/selectionSort.js'
@@ -9,6 +10,21 @@ import bubbleSort from './modules/algorithms/sorting/bubbleSort.js'
 import insertionSort from './modules/algorithms/sorting/insertionSort.js'
 import radixSort from "./modules/algorithms/sorting/radixSort.js";
 
+let heap = new MaxBinaryHeap
+window.heap = heap;
+heap.insert(12);
+heap.insert(2);
+heap.insert(1);
+heap.insert(55);
+heap.insert(37);
+heap.insert(41);
+heap.insert(18);
+heap.insert(27);
+heap.insert(33);
+heap.insert(155);
+
+
+console.log(heap)
 
 const div = document.querySelector(".block");
 const button = document.querySelectorAll("button");
