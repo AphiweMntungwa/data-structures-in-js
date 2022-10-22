@@ -3,6 +3,7 @@ import { SinglyLinkedList } from "./modules/datastructures/singlyLinkedList/inde
 import Queue from "./modules/datastructures/queue/index.js"
 import { binarySearchTree } from "./modules/datastructures/binarySearchTree/index.js"
 import MaxBinaryHeap from "./modules/datastructures/maxBinaryHeap/index.js";
+import PriorityQueue from "./modules/datastructures/priorityQueue/index.js";
 import quickSort from './modules/algorithms/sorting/quickSort.js'
 import mergeSort from './modules/algorithms/sorting/mergeSort.js'
 import selectionSort from './modules/algorithms/sorting/selectionSort.js'
@@ -10,19 +11,24 @@ import bubbleSort from './modules/algorithms/sorting/bubbleSort.js'
 import insertionSort from './modules/algorithms/sorting/insertionSort.js'
 import radixSort from "./modules/algorithms/sorting/radixSort.js";
 
-let heap = new MaxBinaryHeap
+let heap = new PriorityQueue()
 window.heap = heap;
+window.MaxBinaryHeap = MaxBinaryHeap
 
-heap.insert(41);
-heap.insert(39);
-heap.insert(33);
-heap.insert(18);
-heap.insert(27);
-heap.insert(12);
-heap.insert(55);
+heap.enqueue(140, 45)
+heap.enqueue(40, 57)
+heap.enqueue(40, 56)
+heap.enqueue(450, 3)
+heap.enqueue(100, 1)
+heap.enqueue(0, 14)
+heap.enqueue(140, 30)
+heap.enqueue(10, 155)
 
-
-console.log(heap)
+let arr = []
+for (const one in heap.values) {
+    arr.push(heap.values[one].priority)
+}
+console.log(arr)
 
 const div = document.querySelector(".block");
 const button = document.querySelectorAll("button");

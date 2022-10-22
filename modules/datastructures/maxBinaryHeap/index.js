@@ -4,7 +4,10 @@ export default class MaxBinaryHeap {
     }
 
     insert(val) {
-        if (this.values.length === 0) return this.values.push(val);
+        if (this.values.length === 0) {
+            this.values.push(val);
+            return this;
+        }
         this.values.push(val);
         let index = this.values.length - 1
         let parent = Math.floor((index - 1) / 2)
@@ -22,15 +25,15 @@ export default class MaxBinaryHeap {
     bubbleDown(parent, leftChild, rightChild, arr = this.values) {
         if (arr[parent] < arr[leftChild] || arr[parent] < arr[rightChild]) {
             if (arr[rightChild] === undefined) {
-                [this.values[parent], this.values[leftChild]] = [this.values[leftChild], this.values[parent]];
+                [arr[parent], arr[leftChild]] = [arr[leftChild], arr[parent]];
             } else if (arr[leftChild] === undefined) {
-                [this.values[parent], this.values[rightChild]] = [this.values[rightChild], this.values[parent]];
+                [arr[parent], arr[rightChild]] = [arr[rightChild], arr[parent]];
             } else if (arr[leftChild] !== arr[rightChild]) {
                 if (arr[leftChild] > arr[rightChild]) {
-                    [this.values[parent], this.values[leftChild]] = [this.values[leftChild], this.values[parent]];
+                    [arr[parent], arr[leftChild]] = [arr[leftChild], arr[parent]];
                     parent = leftChild;
                 } else if (arr[leftChild] < arr[rightChild]) {
-                    [this.values[parent], this.values[rightChild]] = [this.values[rightChild], this.values[parent]];
+                    [arr[parent], arr[rightChild]] = [arr[rightChild], arr[parent]];
                     parent = rightChild;
                 }
                 leftChild = 2 * parent + 1;
