@@ -15,14 +15,14 @@ let heap = new PriorityQueue()
 window.heap = heap;
 window.MaxBinaryHeap = MaxBinaryHeap
 
-heap.enqueue(140, 45)
-heap.enqueue(40, 57)
-heap.enqueue(40, 56)
-heap.enqueue(450, 3)
-heap.enqueue(100, 1)
-heap.enqueue(0, 14)
-heap.enqueue(140, 30)
-heap.enqueue(10, 155)
+heap.enqueue("headache", 0)
+heap.enqueue("common fever", 0)
+heap.enqueue("Blood pressure checkup", 0)
+heap.enqueue("Minor bleeding", 1)
+heap.enqueue("Leg injury", 1)
+heap.enqueue("GunShot wound", 5)
+heap.enqueue("pregnancy into labour", 4)
+heap.enqueue("Minor accidents", 3)
 
 let arr = []
 for (const one in heap.values) {

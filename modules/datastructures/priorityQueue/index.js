@@ -60,13 +60,14 @@ export default class PriorityQueue {
         }
     }
     dequeue() {
-        if (this.values.length === 1) return this.values.pop();
+        if (this.values.length === 0) return undefined;
+        if (this.values.length === 1) return this.values.pop().value;
         let parent = 0;
         [this.values[parent], this.values[this.values.length - 1]] = [this.values[this.values.length - 1], this.values[parent]];
         let leftChild = 2 * parent + 1;
         let rightChild = 2 * parent + 2;
         let max = this.values.pop();
         this.bubbleDown(parent, leftChild, rightChild);
-        return max;
+        return max.value;
     }
 }
