@@ -3,6 +3,7 @@ import { SinglyLinkedList } from "./modules/datastructures/singlyLinkedList/inde
 import Queue from "./modules/datastructures/queue/index.js"
 import { binarySearchTree } from "./modules/datastructures/binarySearchTree/index.js"
 import MaxBinaryHeap from "./modules/datastructures/maxBinaryHeap/index.js";
+import HashTable from "./modules/datastructures/hash table/index.js";
 import PriorityQueue from "./modules/datastructures/priorityQueue/index.js";
 import quickSort from './modules/algorithms/sorting/quickSort.js'
 import mergeSort from './modules/algorithms/sorting/mergeSort.js'
@@ -13,7 +14,16 @@ import radixSort from "./modules/algorithms/sorting/radixSort.js";
 
 let heap = new PriorityQueue()
 window.heap = heap;
-window.MaxBinaryHeap = MaxBinaryHeap
+let hashed = new HashTable();
+window.hashed = hashed
+window.HashTable = HashTable
+
+hashed.set("name", "Aphiwe")
+hashed.set("age", 22)
+hashed.set("gender", "Male")
+hashed.set("kills", 43)
+hashed.set("experience", 4)
+hashed.set("lastTested", Date(Date.now()).slice(0, 15))
 
 heap.enqueue("headache", 0)
 heap.enqueue("common fever", 0)
